@@ -1,0 +1,23 @@
+<h3>{{page_title}}</h3>
+
+{{#if session.isAuthenticated}}
+Logged in as {{session.currentUser.displayName}}<br><br>
+
+<ul class="post-publish">
+	<li> {{input value=score placeholder="score here"}} </li>
+	<li> <button {{action "insert_stat"}}>insert score</button> </li>
+</ul>
+{{else}}
+	Not logged in<br>
+{{/if}}
+
+Stats:
+<section>
+{{#each model as |stat|}}
+<div>
+	<div>
+		User user: {{stat.email}}, stat: {{stat.score}}
+	</div>
+</div>
+{{/each}}
+</section>

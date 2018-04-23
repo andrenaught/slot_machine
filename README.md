@@ -1,5 +1,17 @@
 # project2
 
+## This branch uses fire base authentication
+Database link: https://console.firebase.google.com/u/3/project/casino-cb01a/settings/general/
+-if you can't access it let me know your email
+
+Run(might not be necessary):
+```
+ember install emberfire //for firebase
+ember install torii //for authentication
+```
+
+info found from: 'https://github.com/firebase/emberfire'
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
