@@ -2,14 +2,15 @@
 
 ## This 'andre' branch uses fire base authentication :shipit:
 After npm install, run these:
+
+info found from: 'https://github.com/firebase/emberfire'
 ```
 ember install emberfire //for firebase
 ember install torii //for authentication
 ```
 
-Database link: https://console.firebase.google.com/u/3/project/casino-cb01a/settings/general/
+## Database link: https://console.firebase.google.com/u/3/project/casino-cb01a/settings/general/
  - if you can't access it let me know your email <br />
-info found from: 'https://github.com/firebase/emberfire'
 
 # Vanilla README stuff
 This README outlines the details of collaborating on this Ember application.
