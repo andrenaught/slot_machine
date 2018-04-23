@@ -9,7 +9,7 @@ ember install emberfire //for firebase
 ember install torii //for authentication
 ```
 
-## Database link: https://console.firebase.google.com/u/3/project/casino-cb01a/settings/general/
+#### Database link: https://console.firebase.google.com/u/3/project/casino-cb01a/settings/general/
  - if you can't access it let me know your email <br />
 
 # Vanilla README stuff
