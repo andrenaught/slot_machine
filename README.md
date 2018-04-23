@@ -1,9 +1,11 @@
 # project2
 
 ## This 'andre' branch uses fire base authentication :shipit:
-After npm install, run these:
 
-info found from: 'https://github.com/firebase/emberfire'
+#### info found from: https://github.com/firebase/emberfire
+
+
+#### Packages installed (Doing another npm install should automatically install these):
 ```
 ember install emberfire //for firebase
 ember install torii //for authentication
