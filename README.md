@@ -1,6 +1,6 @@
 # project2
 
-## This branch uses fire base authentication
+## This branch uses fire base authentication :shipit:
 After npm install, run these:
 ```
 ember install emberfire //for firebase
@@ -8,8 +8,7 @@ ember install torii //for authentication
 ```
 
 Database link: https://console.firebase.google.com/u/3/project/casino-cb01a/settings/general/
-
--if you can't access it let me know your email
+ - if you can't access it let me know your email <br />
 info found from: 'https://github.com/firebase/emberfire'
 
 # Vanilla README stuff
