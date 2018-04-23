@@ -1,6 +1,6 @@
 # project2
 
-## This branch uses fire base authentication :shipit:
+## This 'andre' branch uses fire base authentication :shipit:
 After npm install, run these:
 ```
 ember install emberfire //for firebase
