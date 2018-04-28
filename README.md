@@ -1,4 +1,4 @@
-# project2
+# slot_machine
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
@@ -14,8 +14,8 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd project2`
+* `git clone https://github.com/andrenaught/slot_machine.git` this repository
+* `cd slot_machine`
 * `npm install`
 
 ## Running / Development
