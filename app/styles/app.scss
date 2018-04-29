@@ -8,27 +8,27 @@ html {
   box-sizing: inherit;
 }
 
-#app {
+:global(#app) {
   margin: 5vh;
   border: 2px solid;
   border-radius: 19px 19px 0 0;
 }
 
-#app-top {
+:global(#app-top) {
   height: 95vh;
 }
 
-#app-top-top {
+:global(#app-top-top) {
   text-align: center;
   overflow: auto;
   border-bottom: 2px solid;
 }
 
-#app-top-bot {
+:global(#app-top-bot) {
 
 }
 
-#app-bot {
+:global(#app-bot) {
   padding: 5%;
   border-top: 2px solid;
 }

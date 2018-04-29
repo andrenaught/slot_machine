@@ -57,6 +57,10 @@ Specify what it takes to deploy your app.
 
 ### Resources/References
 
-* [ember-paper](https://github.com/miguelcobain/ember-paper)
+* [ember-paper](https://www.npmjs.com/package/ember-paper)
+* [ember-css-modules](https://www.npmjs.com/package/ember-css-modules)
+* [ember-css-modules-sass](https://github.com/dfreeman/ember-css-modules-sass)
+* [ember-browserify](https://www.npmjs.com/package/ember-browserify)
 * [box-sizing: border-box;](https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/)
 * [Normalize.css](https://necolas.github.io/normalize.css/)
+* [jQuery-SlotMachine](https://github.com/josex2r/jQuery-SlotMachine)
