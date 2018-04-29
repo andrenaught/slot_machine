@@ -54,3 +54,9 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+### Resources/References
+
+* [ember-paper](https://github.com/miguelcobain/ember-paper)
+* [box-sizing: border-box;](https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/)
+* [Normalize.css](https://necolas.github.io/normalize.css/)

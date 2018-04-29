@@ -1,0 +1,34 @@
+@import 'ember-paper';
+@import 'normalize';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+#app {
+  margin: 5vh;
+  border: 2px solid;
+  border-radius: 19px 19px 0 0;
+}
+
+#app-top {
+  height: 95vh;
+}
+
+#app-top-top {
+  text-align: center;
+  overflow: auto;
+  border-bottom: 2px solid;
+}
+
+#app-top-bot {
+
+}
+
+#app-bot {
+  padding: 5%;
+  border-top: 2px solid;
+}

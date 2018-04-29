@@ -1,5 +1,19 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div id="app" class="layout-column">
+  <div id="app-top" class="flex layout-column">
+    <div id="app-top-top" class="flex-none">
+      <h1>SLOT MACHINE</h1>
+    </div>
+    <div id="app-top-bot" class="flex layout-row layout-align-space-around">
+      {{outlet}}
+    </div>
+  </div>
+  <div id="app-bot" class="flex">
+    <p>CPSC 473</p>
+    {{#paper-list}}
+      {{#paper-subheader}}Team Members{{/paper-subheader}}
+      {{#paper-item}}<p>One</p>{{/paper-item}}
+      {{#paper-item}}<p>two</p>{{/paper-item}}
+      {{#paper-item}}<p>three</p>{{/paper-item}}
+    {{/paper-list}}
+  </div>
+</div>
