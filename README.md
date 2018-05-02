@@ -1,6 +1,6 @@
 # slot_machine
 
-## This 'andre' branch uses fire base authentication :shipit:
+## Using fire base authentication :shipit:
 
 #### info found from: https://github.com/firebase/emberfire
 
