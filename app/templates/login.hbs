@@ -1,0 +1,10 @@
+<h3>{{page_title}}</h3>
+
+{{#if session.isAuthenticated}}
+  	Logged in as {{session.currentUser.displayName}}<br>
+	{{#link-to 'stats'}}Check out the stats page{{/link-to}}<br><br>
+
+  	<button {{action "signOut"}}>Sign out</button><br>
+{{else}}
+  	<button {{action "signIn" "google"}}>Sign in with Google</button>
+{{/if}}

@@ -1,5 +1,20 @@
 # slot_machine
 
+## This 'andre' branch uses fire base authentication :shipit:
+
+#### info found from: https://github.com/firebase/emberfire
+
+
+#### Packages installed (Doing another npm install should automatically install these):
+```
+ember install emberfire //for firebase
+ember install torii //for authentication
+```
+
+#### Database link: https://console.firebase.google.com/u/3/project/casino-cb01a/settings/general/
+ - if you can't access it let me know your email <br />
+
+# Vanilla README stuff
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
