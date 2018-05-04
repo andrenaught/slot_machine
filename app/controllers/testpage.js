@@ -1,14 +1,15 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-  page_title: 'Stats Page',
+  page_title: 'Test Page',
 
   actions: {
     insert_stat: function() {
-      var newPost = this.store.createRecord('stats', {
-				user: this.get('session.currentUser.uid'),
+      console.log(this.get('credit'));
+      var newPost = this.store.createRecord('user', {
+        user_id: this.get('session.currentUser.uid'),
         email: this.get('session.currentUser.email'),
-        score: this.get('score')
+        credit: this.get('credit')
       });
       newPost.save();
     }

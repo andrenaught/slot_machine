@@ -6,8 +6,8 @@ export default Route.extend({
     return this.get('session').fetch().catch(function() {});
   },
 
-   model: function() {
-    return this.store.findAll('stats');
+  model: function() {
+    return this.store.findAll('user');
   },
 
 
