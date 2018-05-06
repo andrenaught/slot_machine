@@ -1,10 +1,22 @@
 <h3>{{page_title}}</h3>
 
 {{#if session.isAuthenticated}}
+	{{#if new_user}}
+		<h2>Hi new user, you start off with 500</h2>
+	{{else}}
+		<h2>Hey you're an old user, Welcome back!</h2>
+	{{/if}}
+
+
   	Logged in as {{session.currentUser.displayName}}<br>
-	{{#link-to 'stats'}}Check out the stats page{{/link-to}}<br><br>
+  	user_id: {{session.currentUser.uid}}<br>
+  	email: {{session.currentUser.email}}<br>
+  	credits: {{session.currentUser.credits}}<br>
+	{{#link-to 'testpage'}}Test page{{/link-to}}<br><br>
 
   	<button {{action "signOut"}}>Sign out</button><br>
 {{else}}
   	<button {{action "signIn" "google"}}>Sign in with Google</button>
 {{/if}}
+
+<button {{action "test"}}>test function</button>
