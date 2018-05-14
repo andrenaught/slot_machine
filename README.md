@@ -79,3 +79,4 @@ Specify what it takes to deploy your app.
 * [box-sizing: border-box;](https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/)
 * [Normalize.css](https://necolas.github.io/normalize.css/)
 * [jQuery-SlotMachine](https://github.com/josex2r/jQuery-SlotMachine)
+* [Blinking text](https://stackoverflow.com/a/16344389)
