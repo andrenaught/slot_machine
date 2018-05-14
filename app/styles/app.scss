@@ -22,20 +22,15 @@ html {
   text-align: center;
 }
 
-:global(#app-header-text) {
+:global(#app-header-main) {
   width: 71%;
-  padding: 0 17%;
+  padding: 0 7%;
   background-color: #ee4e73;
-  position: relative;
 }
 
-:global(#app-header-text) h1 {
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0%);
+:global(#nav-bar-container) {
+  position: relative;
+  top: 21%;
 }
 
 :global(#app-main-container) {
