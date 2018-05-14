@@ -90,5 +90,12 @@ export default Controller.extend({
         }
       });
     });
-  }
+  },
+
+  //check is authentication data has been loaded
+  observe_session_load: observer ('session.isAuthenticated', function() {
+    if (this.get('session.isAuthenticated') && !this.get('just_logged_in')) {
+      this.set_user_data();
+    }
+  })
 });
