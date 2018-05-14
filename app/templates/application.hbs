@@ -59,17 +59,23 @@
   <div id="app-div" class="flex layout-row">
     <img class="flex-none" src="images/jQuery-SlotMachine/modified/machine-div-left.png" alt="">
     <img class="flex" src="images/jQuery-SlotMachine/modified/machine-div-center.png" alt="">
-    <img class="flex-none" src="images/jQuery-SlotMachine/modified/machine-div-right.png" alt=""><
+    <img class="flex-none" src="images/jQuery-SlotMachine/modified/machine-div-right.png" alt="">
   </div>
   <div id="app-lower-container" class="flex layout-row">
-    <div id="app-lower" class="flex">
-      <p>CPSC 473</p>
-      {{#paper-list}}
-        {{#paper-subheader}}Team Members{{/paper-subheader}}
-        {{#paper-item}}<p>One</p>{{/paper-item}}
-        {{#paper-item}}<p>two</p>{{/paper-item}}
-        {{#paper-item}}<p>three</p>{{/paper-item}}
-      {{/paper-list}}
+    <div id="app-lower" class="flex layout-column layout-align-center-center">
+      <div class="flex">
+        <p>A slot machine game created in CPSC 473</p>
+      </div>
+      <div class="flex">
+        <h2 id="team-members">Team Members</h2>
+      </div>
+      <div id="member-container" class="flex layout-row layout-wrap layout-align-space-around-center">
+        <div class="flex-33">Name Name</div>
+        <div class="flex-33">Name Name</div>
+        <div class="flex-33">Name Name</div>
+        <div class="flex-33">Name Name</div>
+        <div class="flex-33">Name Name</div>
+      </div>
     </div>
   </div>
 </div>
