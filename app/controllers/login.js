@@ -53,6 +53,9 @@ export default Controller.extend({
           }
         });
 
+      })
+      .then(() => {
+        this.transitionToRoute('game');
       });
     },
 

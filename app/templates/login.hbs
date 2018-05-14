@@ -1,22 +1,11 @@
-<h3>{{page_title}}</h3>
+<div local-class="page-container" class="layout-column layout-align-center-center flex">
+	<h3 local-class="page-title" class="flex-none">SLOT MACHINE</h3>
 
-{{#if session.isAuthenticated}}
-	{{#if new_user}}
-		<h2>Hi new user, you start off with 500</h2>
-	{{else}}
-		<h2>Hey you're an old user, Welcome back!</h2>
-	{{/if}}
-
-
-  	Logged in as {{session.currentUser.displayName}}<br>
-  	user_id: {{session.currentUser.uid}}<br>
-  	email: {{session.currentUser.email}}<br>
-  	credits: {{session.currentUser.credits}}<br>
-	{{#link-to 'testpage'}}Test page{{/link-to}}<br><br>
-
-  	<button {{action "signOut"}}>Sign out</button><br>
-{{else}}
-  	<button {{action "signIn" "google"}}>Sign in with Google</button>
-{{/if}}
-
-<button {{action "test"}}>test function</button>
+	<div class="flex-none">
+		{{#if session.isAuthenticated}}
+				{{#paper-button local-class="action-btn" noink=true primary=true onClick=(action "signOut")}}EXIT GAME{{/paper-button}}
+		{{else}}
+				{{#paper-button local-class="action-btn" noink=true primary=true onClick=(action "signIn" "google")}}START GAME{{/paper-button}}
+		{{/if}}
+	</div>
+</div>
