@@ -1,9 +1,43 @@
-<h1>Slot Machine</h1>
-
-Firebase link: <a target="_blank" href="https://console.firebase.google.com/u/3/project/casino-cb01a/settings/general/">https://console.firebase.google.com/u/3/project/casino-cb01a/settings/general/</a> <br>
-
-{{#link-to 'login'}}login page{{/link-to}}
-
-<div class="container">
-{{outlet}}
+<div id="app" class="layout-column">
+  <div id="app-upper" class="flex layout-column">
+    <div id="app-header" class="flex-none layout-row layout-align-center">
+      <img class="flex-none" src="images/jQuery-SlotMachine/modified/machine-header-border-left.png" alt="">
+      <div id="app-header-text" class="flex-none"><h1>SLOT MACHINE</h1></div>
+      <img class="flex-none" src="images/jQuery-SlotMachine/modified/machine-header-border-right.png" alt="">
+    </div>
+    <div id="app-main-container" class="flex layout-row">
+      <div class="flex-none layout-column">
+        <img class="flex-none" src="images/jQuery-SlotMachine/modified/machine-main-border-top-left.png" alt="">
+        <div local-class="app-main-border" class="flex"> </div>
+      </div>
+      <div id="app-main-container-mid" class="flex">
+        <div id="app-main-wrapper">
+          <div id="app-main-shadow"></div>
+          <div id="app-main">
+            {{outlet}}
+          </div>
+        </div>
+      </div>
+      <div class="flex-none layout-column">
+        <img class="flex-none" src="images/jQuery-SlotMachine/modified/machine-main-border-top-right.png" alt="">
+        <div local-class="app-main-border" class="flex"> </div>
+      </div>
+    </div>
+  </div>
+  <div id="app-div" class="flex layout-row">
+    <img class="flex-none" src="images/jQuery-SlotMachine/modified/machine-div-left.png" alt="">
+    <img class="flex" src="images/jQuery-SlotMachine/modified/machine-div-center.png" alt="">
+    <img class="flex-none" src="images/jQuery-SlotMachine/modified/machine-div-right.png" alt=""><
+  </div>
+  <div id="app-lower-container" class="flex layout-row">
+    <div id="app-lower" class="flex">
+      <p>CPSC 473</p>
+      {{#paper-list}}
+        {{#paper-subheader}}Team Members{{/paper-subheader}}
+        {{#paper-item}}<p>One</p>{{/paper-item}}
+        {{#paper-item}}<p>two</p>{{/paper-item}}
+        {{#paper-item}}<p>three</p>{{/paper-item}}
+      {{/paper-list}}
+    </div>
+  </div>
 </div>
