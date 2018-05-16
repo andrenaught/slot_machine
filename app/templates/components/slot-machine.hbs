@@ -1,17 +1,136 @@
-<div local-class="slot-box" class="layout-column layout-align-space-around">
-  <div local-class="slot-row-1 slot-row" class="flex layout-row layout-align-space-around">
-    <div local-class="slot-item-1-1 slot-item" class="flex"></div>
-    <div local-class="slot-item-1-2 slot-item" class="flex"></div>
-    <div local-class="slot-item-1-3 slot-item" class="flex"></div>
+<div local-class="game-container" class="layout-column layout-align-space-around-center">
+  <div class="slot-container">
+    <div class="flex layout-row layout-align-space-between-center level-three-container">
+      <div>
+        {{#paper-button onClick=(action "selectLevelThree") raised=true mini=true iconButton=true}}
+          {{paper-icon "looks-3" class="looks-3"}}
+          {{#paper-tooltip position="left"}}
+            100 Credits
+          {{/paper-tooltip}}
+        {{/paper-button}}
+      </div>
+      <div>
+        {{#paper-button onClick=(action "selectLevelThree") raised=true mini=true iconButton=true}}
+          {{paper-icon "looks-3" class="looks-3"}}
+          {{#paper-tooltip position="right"}}
+            100 Credits
+          {{/paper-tooltip}}
+        {{/paper-button}}
+      </div>
+    </div>
+    <div class="layout-row layout-align-space-between-center level-two-container">
+      <div>
+        {{#paper-button onClick=(action "selectLevelTwo") raised=true mini=true iconButton=true}}
+          {{paper-icon "looks-two" class="looks-two"}}
+          {{#paper-tooltip position="left"}}
+            50 Credits
+          {{/paper-tooltip}}
+        {{/paper-button}}
+      </div>
+      <div id=reel1>
+        {{base-slot reelName="reel1"}}
+      </div>
+      <div id=reel2>
+        {{base-slot reelName="reel2"}}
+      </div>
+      <div id=reel3>
+        {{base-slot reelName="reel3"}}
+      </div>
+      <div>
+        {{#paper-button onClick=(action "selectLevelTwo") raised=true mini=true iconButton=true}}
+          {{paper-icon "looks-two" class="looks-two"}}
+          {{#paper-tooltip position="right"}}
+            50 Credits
+          {{/paper-tooltip}}
+        {{/paper-button}}
+      </div>
+    </div>
+    <div class="layout-row layout-align-center-center level-one-container">
+      <div>
+        {{#paper-button onClick=(action "selectLevelOne") raised=true mini=true iconButton=true}}
+          {{paper-icon "looks-one" class="looks-one"}}
+          {{#paper-tooltip position="left"}}
+            25 Credits
+          {{/paper-tooltip}}
+        {{/paper-button}}
+      </div>
+      <div id=reel4>
+        {{base-slot reelName="reel4"}}
+      </div>
+      <div id=reel5>
+        {{base-slot reelName="reel5"}}
+      </div>
+      <div id=reel6>
+        {{base-slot reelName="reel6"}}
+      </div>
+      <div>
+        {{#paper-button onClick=(action "selectLevelOne") raised=true mini=true iconButton=true}}
+          {{paper-icon "looks-one" class="looks-one"}}
+          {{#paper-tooltip position="right"}}
+            25 Credits
+          {{/paper-tooltip}}
+        {{/paper-button}}
+      </div>
+    </div>
+    <div class="layout-row layout-align-center-center level-two-container">
+      <div>
+        {{#paper-button onClick=(action "selectLevelTwo") raised=true mini=true iconButton=true}}
+          {{paper-icon "looks-two" class="looks-two"}}
+          {{#paper-tooltip position="left"}}
+            50 Credits
+          {{/paper-tooltip}}
+        {{/paper-button}}
+      </div>
+      <div id=reel7>
+        {{base-slot reelName="reel7"}}
+      </div>
+      <div id=reel8>
+        {{base-slot reelName="reel8"}}
+      </div>
+      <div id=reel9>
+        {{base-slot reelName="reel9"}}
+      </div>
+      <div>
+        {{#paper-button onClick=(action "selectLevelTwo") raised=true mini=true iconButton=true}}
+          {{paper-icon "looks-two" class="looks-two"}}
+          {{#paper-tooltip position="right"}}
+            50 Credits
+          {{/paper-tooltip}}
+        {{/paper-button}}
+      </div>
+    </div>
+    <div class="flex layout-row layout-align-space-between-center level-three-container">
+      <div>
+        {{#paper-button onClick=(action "selectLevelThree") raised=true mini=true iconButton=true}}
+          {{paper-icon "looks-3" class="looks-3"}}
+          {{#paper-tooltip position="left"}}
+            100 Credits
+          {{/paper-tooltip}}
+        {{/paper-button}}
+      </div>
+      <div>
+        {{#paper-button onClick=(action "selectLevelThree") raised=true mini=true iconButton=true}}
+          {{paper-icon "looks-3" class="looks-3"}}
+          {{#paper-tooltip position="right"}}
+            100 Credits
+          {{/paper-tooltip}}
+        {{/paper-button}}
+      </div>
+    </div>
   </div>
-  <div local-class="slot-row-2 slot-row" class="flex layout-row layout-align-space-around">
-    <div local-class="slot-item-2-1 slot-item" class="flex"></div>
-    <div local-class="slot-item-2-2 slot-item" class="flex"></div>
-    <div local-class="slot-item-2-3 slot-item" class="flex"></div>
-  </div>
-  <div local-class="slot-row-3 slot-row" class="flex layout-row layout-align-space-around">
-    <div local-class="slot-item-3-1 slot-item" class="flex"></div>
-    <div local-class="slot-item-3-2 slot-item" class="flex"></div>
-    <div local-class="slot-item-3-3 slot-item" class="flex"></div>
+
+  <div>
+    {{#paper-button onClick=(action "shuffle") raised=true mini=true iconButton=true}}
+      {{paper-icon "play-arrow"}}
+      {{#paper-tooltip position="bottom"}}
+        Shuffle
+      {{/paper-tooltip}}
+    {{/paper-button}}
+    {{#paper-button onClick=(action "stop") raised=true mini=true iconButton=true}}
+      {{paper-icon "stop"}}
+      {{#paper-tooltip position="bottom"}}
+        Stop
+      {{/paper-tooltip}}
+    {{/paper-button}}
   </div>
 </div>

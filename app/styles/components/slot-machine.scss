@@ -1,0 +1,18 @@
+:global(.looks-3) {
+  color: blue !important;
+}
+
+:global(.looks-two) {
+  color: green !important;
+}
+
+:global(.looks-one) {
+  color: red !important;
+}
+
+.game-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

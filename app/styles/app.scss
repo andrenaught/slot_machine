@@ -67,6 +67,12 @@ html {
   transform: translate(-50%, 0%);
 }
 
+:global(#app-main) > div {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 :global(#app-div) {
   height: 15vh;
   min-height: 80px;
