@@ -1,1 +1,5 @@
-{{slot-machine}}
+{{#if session.isAuthenticated}}
+  {{slot-machine credits=user.credit}}
+{{else}}
+  {{slot-machine}}
+{{/if}}

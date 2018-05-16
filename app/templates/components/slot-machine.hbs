@@ -1,6 +1,12 @@
-<div local-class="game-container" class="layout-column layout-align-space-around-center">
-  <div class="slot-container">
-    <div class="flex layout-row layout-align-space-between-center level-three-container">
+<div local-class="game-container" class="layout-row layout-align-space-around-center">
+  <div local-class="instruction-container" class="flex-20">
+    <h3>Instructions</h3>
+    <p>Lvl 3: Two Diagonals + Three Rows</p>
+    <p>Lvl 2: Three Rows</p>
+    <p>Lvl 1: One Row</p>
+  </div>
+  <div class="flex slot-container layout-column layout-align-space-around-center">
+    <div class="layout-row layout-align-space-between-center level-three-container">
       <div>
         {{#paper-button onClick=(action "selectLevelThree") raised=true mini=true iconButton=true}}
           {{paper-icon "looks-3" class="looks-3"}}
@@ -45,7 +51,7 @@
         {{/paper-button}}
       </div>
     </div>
-    <div class="layout-row layout-align-center-center level-one-container">
+    <div class="layout-row layout-align-space-between-center level-one-container">
       <div>
         {{#paper-button onClick=(action "selectLevelOne") raised=true mini=true iconButton=true}}
           {{paper-icon "looks-one" class="looks-one"}}
@@ -72,7 +78,7 @@
         {{/paper-button}}
       </div>
     </div>
-    <div class="layout-row layout-align-center-center level-two-container">
+    <div class="layout-row layout-align-space-between-center level-two-container">
       <div>
         {{#paper-button onClick=(action "selectLevelTwo") raised=true mini=true iconButton=true}}
           {{paper-icon "looks-two" class="looks-two"}}
@@ -99,7 +105,7 @@
         {{/paper-button}}
       </div>
     </div>
-    <div class="flex layout-row layout-align-space-between-center level-three-container">
+    <div class="layout-row layout-align-space-between-center level-three-container">
       <div>
         {{#paper-button onClick=(action "selectLevelThree") raised=true mini=true iconButton=true}}
           {{paper-icon "looks-3" class="looks-3"}}
@@ -117,20 +123,23 @@
         {{/paper-button}}
       </div>
     </div>
+    <div class="layout-row layout-align-space-around-center">
+      {{#paper-button onClick=(action "shuffle") raised=true mini=true iconButton=true}}
+        {{paper-icon "play-arrow"}}
+        {{#paper-tooltip position="bottom"}}
+          Shuffle
+        {{/paper-tooltip}}
+      {{/paper-button}}
+      {{#paper-button onClick=(action "stop") raised=true mini=true iconButton=true}}
+        {{paper-icon "stop"}}
+        {{#paper-tooltip position="bottom"}}
+          Stop
+        {{/paper-tooltip}}
+      {{/paper-button}}
+    </div>
   </div>
-
-  <div>
-    {{#paper-button onClick=(action "shuffle") raised=true mini=true iconButton=true}}
-      {{paper-icon "play-arrow"}}
-      {{#paper-tooltip position="bottom"}}
-        Shuffle
-      {{/paper-tooltip}}
-    {{/paper-button}}
-    {{#paper-button onClick=(action "stop") raised=true mini=true iconButton=true}}
-      {{paper-icon "stop"}}
-      {{#paper-tooltip position="bottom"}}
-        Stop
-      {{/paper-tooltip}}
-    {{/paper-button}}
+  <div local-class="credit-container" class="flex-20">
+    <h3>Credits:</h3>
+    <p id="credits">{{credits}}</p>
   </div>
 </div>
