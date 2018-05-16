@@ -1,23 +1,45 @@
-<h3>{{page_title}}</h3>
+{{#light-table table height='65vh' as |t|}}
 
-{{#if session.isAuthenticated}}
-Logged in as {{session.currentUser.displayName}}<br><br>
+  {{!--
+    In order for `fa-sort-asc` and `fa-sort-desc` icons to work,
+    you need to have ember-font-awesome installed or manually include
+    the font-awesome assets, e.g. via a CDN.
+  --}}
 
-<ul class="post-publish">
-	<li> {{input value=credit placeholder="credit here"}} </li>
-	<li> <button {{action "insert_stat"}}>insert credit</button> </li>
-</ul>
-{{else}}
-	Not logged in<br>
-{{/if}}
+  {{t.head
+    onColumnClick=(action 'onColumnClick')
+    iconSortable='fa fa-sort'
+    iconAscending='fa fa-sort-asc'
+    iconDescending='fa fa-sort-desc'
+    fixed=true
+  }}
 
-Stats:
-<section>
-{{#each model as |user|}}
-<div>
-	<div>
-		User user: {{user.email}}, credits: {{user.credit}}
-	</div>
-</div>
-{{/each}}
-</section>
+  {{#t.body
+    canSelect=false
+    as |body|
+  }}
+    {{#if isLoading}}
+      {{#body.loader}}
+        {{table-loader}}
+      {{/body.loader}}
+    {{/if}}
+  {{/t.body}}
+
+  {{#t.foot fixed=true as |columns|}}
+    <tr>
+      <td class="align-center" colspan={{columns.length}}>
+        {{one-way-select selectedFilter
+            options=possibleFilters
+            optionValuePath="valuePath"
+            optionLabelPath="label"
+            update=(action (pipe (action (mut selectedFilter)) (action 'onSearchChange')))
+        }}
+        {{one-way-input
+          value=query
+          placeholder="Search..."
+          update=(action (pipe (action (mut query)) (action 'onSearchChange')))
+        }}
+      </td>
+    </tr>
+  {{/t.foot}}
+{{/light-table}}
