@@ -10,7 +10,8 @@ export default Controller.extend({
       this.transitionToRoute('game');
     },
 
-    toPlayerChart: function() {
+    toPlayerChart: function(){
+    this.transitionToRoute('stats');
       // TODO: call transitionToRoute to stats page
     },
 
