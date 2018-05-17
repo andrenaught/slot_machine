@@ -4,7 +4,6 @@ import {
   set
 } from '@ember/object';
 
-let RESULTS = [];
 const NUMBER_OF_REELS = 9;
 
 export default Component.extend({
@@ -14,7 +13,7 @@ export default Component.extend({
   // At this point jQuery onWindow load has completed
   // Calling this makes sure that only 3 slot reel icons are showing
   didInsertElement: function() {
-    for (let i=1; i<NUMBER_OF_REELS+1; i++) {
+    for (let i=1; i<=NUMBER_OF_REELS; i++) {
       this.setReel(`reel${i}`, i*50);
     }
   },
@@ -28,87 +27,68 @@ export default Component.extend({
     });
     set(this, name, reel);
   },
-  onComplete(active) {
-    RESULTS.push(active);
-    if (RESULTS.length == NUMBER_OF_REELS) {
-      console.log(`Results: ${RESULTS}`);
-      // level one
-      if (this.selectedLevel == 1 && ((RESULTS[3] == RESULTS[4]) && (RESULTS[5] == RESULTS[4])))
-      {
-        if (RESULTS[3] == 0 || RESULTS[3] == 1 || RESULTS[3] == 2)
-          this.winCRedits(100);
-        else if (RESULTS[3] == 3 || RESULTS[3] == 4)
-          this.winCRedits(300);
-        else if (RESULTS[3] == 5)
-          this.winCRedits(1000);
-      }
-      // level two
-      else if (this.selectedLevel == 2 && (((RESULTS[0] == RESULTS[1]) && (RESULTS[1] == RESULTS[2])) || ((RESULTS[3] == RESULTS[4]) && (RESULTS[4] == RESULTS[5])) || ((RESULTS[6] == RESULTS[7]) && (RESULTS[7] == RESULTS[8]))))
-      {
-        if (((RESULTS[0] == 0) && (RESULTS[1] == 0) && (RESULTS[2] == 0)) || ((RESULTS[0] == 1) && (RESULTS[1] == 1) && (RESULTS[2] == 1)) || ((RESULTS[0] == 2) && (RESULTS[1] == 2) && (RESULTS[2] == 2)))
-          this.winCRedits(100);
-        if (((RESULTS[3] == 0) && (RESULTS[4] == 0) && (RESULTS[5] == 0)) || ((RESULTS[3] == 1) && (RESULTS[4] == 1) && (RESULTS[5] == 1)) || ((RESULTS[3] == 2) && (RESULTS[4] == 2) && (RESULTS[5] == 2)))
-          this.winCRedits(100);
-        if (((RESULTS[6] == 0) && (RESULTS[7] == 0) && (RESULTS[8] == 0)) || ((RESULTS[6] == 1) && (RESULTS[7] == 1) && (RESULTS[8] == 1)) || ((RESULTS[6] == 2) && (RESULTS[7] == 2) && (RESULTS[8] == 2)))
-          this.winCRedits(100);
-        if (((RESULTS[0] == 3) && (RESULTS[1] == 3) && (RESULTS[2] == 3)) || ((RESULTS[0] == 4) && (RESULTS[1] == 4) && (RESULTS[2] == 4)))
-          this.winCRedits(300);
-        if (((RESULTS[3] == 3) && (RESULTS[4] == 3) && (RESULTS[5] == 3)) || ((RESULTS[3] == 4) && (RESULTS[4] == 4) && (RESULTS[5] == 4)))
-          this.winCRedits(300);
-        if (((RESULTS[6] == 3) && (RESULTS[7] == 3) && (RESULTS[8] == 3)) || ((RESULTS[6] == 4) && (RESULTS[7] == 4) && (RESULTS[8] == 4)))
-          this.winCRedits(300);
-        if ((RESULTS[0] == 5) && (RESULTS[1] == 5) && (RESULTS[2] == 5))
-          this.winCRedits(1000);
-        if ((RESULTS[3] == 5) && (RESULTS[4] == 5) && (RESULTS[5] == 5))
-          this.winCRedits(1000);
-        if ((RESULTS[6] == 5) && (RESULTS[7] == 5) && (RESULTS[8] == 5))
-          this.winCRedits(1000);
-      }
-      // level three
-      else if (this.selectedLevel == 3 && (
-        ((RESULTS[0] == RESULTS[1]) && (RESULTS[1] == RESULTS[2])) ||
-        ((RESULTS[3] == RESULTS[4]) && (RESULTS[4] == RESULTS[5])) ||
-        ((RESULTS[6] == RESULTS[7]) && (RESULTS[7] == RESULTS[8])) ||
-        ((RESULTS[0] == RESULTS[4]) && (RESULTS[0] == RESULTS[8])) ||
-        ((RESULTS[2] == RESULTS[4]) && (RESULTS[2] == RESULTS[6]))))
-      {
-        if (((RESULTS[0] == 0) && (RESULTS[1] == 0) && (RESULTS[2] == 0)) || ((RESULTS[0] == 1) && (RESULTS[1] == 1) && (RESULTS[2] == 1)) || ((RESULTS[0] == 2) && (RESULTS[1] == 2) && (RESULTS[2] == 2)))
-          this.winCRedits(100);
-        if (((RESULTS[3] == 0) && (RESULTS[4] == 0) && (RESULTS[5] == 0)) || ((RESULTS[3] == 1) && (RESULTS[4] == 1) && (RESULTS[5] == 1)) || ((RESULTS[3] == 2) && (RESULTS[4] == 2) && (RESULTS[5] == 2)))
-          this.winCRedits(100);
-        if (((RESULTS[6] == 0) && (RESULTS[7] == 0) && (RESULTS[8] == 0)) || ((RESULTS[6] == 1) && (RESULTS[7] == 1) && (RESULTS[8] == 1)) || ((RESULTS[6] == 2) && (RESULTS[7] == 2) && (RESULTS[8] == 2)))
-          this.winCRedits(100);
-        if (((RESULTS[0] == 0) && (RESULTS[4] == 0) && (RESULTS[8] == 0)) || ((RESULTS[0] == 1) && (RESULTS[4] == 1) && (RESULTS[8] == 1)) || ((RESULTS[0] == 2) && (RESULTS[4] == 2) && (RESULTS[8] == 2)))
-          this.winCRedits(100);
-        if (((RESULTS[2] == 0) && (RESULTS[4] == 0) && (RESULTS[6] == 0)) || ((RESULTS[2] == 1) && (RESULTS[4] == 1) && (RESULTS[6] == 1)) || ((RESULTS[2] == 2) && (RESULTS[4] == 2) && (RESULTS[6] == 2)))
-          this.winCRedits(100);
-        if (((RESULTS[0] == 3) && (RESULTS[1] == 3) && (RESULTS[2] == 3)) || ((RESULTS[0] == 4) && (RESULTS[1] == 4) && (RESULTS[2] == 4)))
-          this.winCRedits(300);
-        if (((RESULTS[3] == 3) && (RESULTS[4] == 3) && (RESULTS[5] == 3)) || ((RESULTS[3] == 4) && (RESULTS[4] == 4) && (RESULTS[5] == 4)))
-          this.winCRedits(300);
-        if (((RESULTS[6] == 3) && (RESULTS[7] == 3) && (RESULTS[8] == 3)) || ((RESULTS[6] == 4) && (RESULTS[7] == 4) && (RESULTS[8] == 4)))
-          this.winCRedits(300);
-        if (((RESULTS[0] == 3) && (RESULTS[4] == 3) && (RESULTS[8] == 3)) || ((RESULTS[0] == 4) && (RESULTS[4] == 4) && (RESULTS[8] == 4)))
-          this.winCRedits(300);
-        if (((RESULTS[2] == 3) && (RESULTS[4] == 3) && (RESULTS[6] == 3)) || ((RESULTS[2] == 4) && (RESULTS[4] == 4) && (RESULTS[6] == 4)))
-          this.winCRedits(300);
-        if ((RESULTS[0] == 5) && (RESULTS[1] == 5) && (RESULTS[2] == 5))
-          this.winCRedits(1000);
-        if ((RESULTS[3] == 5) && (RESULTS[4] == 5) && (RESULTS[5] == 5))
-          this.winCRedits(1000);
-        if ((RESULTS[6] == 5) && (RESULTS[7] == 5) && (RESULTS[8] == 5))
-          this.winCRedits(1000);
-        if ((RESULTS[0] == 5) && (RESULTS[4] == 5) && (RESULTS[8] == 5))
-          this.winCRedits(1000);
-        if ((RESULTS[2] == 5) && (RESULTS[4] == 5) && (RESULTS[6] == 5))
-          this.winCRedits(1000);
+  checkWin() {
+    console.log(`level: ${this.get('selectedLevel')}`);
+    let credits = 0;
+    if (this.selectedLevel >= 1) {
+      // check 2nd row
+      if (((this.get('reel4').active == this.get('reel5').active) && (this.get('reel5').active == this.get('reel6').active))) {
+        if (this.get('reel4').active == 0 || this.get('reel4').active == 1 || this.get('reel4').active == 2)
+          credits += 100;
+        else if (this.get('reel4').active == 3 || this.get('reel4').active == 4)
+          credits += 300;
+        else if (this.get('reel4').active == 5)
+          credits += 1000;
       }
     }
+    if (this.selectedLevel >= 2) {
+      // check 1st row
+      if (((this.get('reel1').active == this.get('reel2').active) && (this.get('reel2').active == this.get('reel3').active))) {
+        if (this.get('reel1').active == 0 || this.get('reel1').active == 1 || this.get('reel1').active == 2)
+          credits += 100;
+        else if (this.get('reel1').active == 3 || this.get('reel1').active == 4)
+          credits += 300;
+        else if (this.get('reel1').active == 5)
+          credits += 1000;
+      }
+      // check 3rd row
+      if (((this.get('reel7').active == this.get('reel8').active) && (this.get('reel8').active == this.get('reel9').active))) {
+        if (this.get('reel7').active == 0 || this.get('reel7').active == 1 || this.get('reel7').active == 2)
+          credits += 100;
+        else if (this.get('reel7').active == 3 || this.get('reel7').active == 4)
+          credits += 300;
+        else if (this.get('reel7').active == 5)
+          credits += 1000;
+      }
+    }
+    if (this.selectedLevel >= 3) {
+      // check top-bot diagonal
+      if (((this.get('reel1').active == this.get('reel5').active) && (this.get('reel5').active == this.get('reel9').active))) {
+        if (this.get('reel1').active == 0 || this.get('reel1').active == 1 || this.get('reel1').active == 2)
+          credits += 100;
+        else if (this.get('reel1').active == 3 || this.get('reel1').active == 4)
+          credits += 300;
+        else if (this.get('reel1').active == 5)
+          credits += 1000;
+      }
+      // check bot-top diagonal
+      if (((this.get('reel7').active == this.get('reel5').active) && (this.get('reel5').active == this.get('reel3').active))) {
+        if (this.get('reel7').active == 0 || this.get('reel7').active == 1 || this.get('reel7').active == 2)
+          credits += 100;
+        else if (this.get('reel7').active == 3 || this.get('reel7').active == 4)
+          credits += 300;
+        else if (this.get('reel7').active == 5)
+          credits += 1000;
+      }
+    }
+    this.winCredits(credits)
   },
   winCredits(amount) {
+    console.log(`won ${amount}`);
     // add credits to backend
+    var i;
     for (i = 0; i < amount; i++) {
-      this.credits += 1;
+      this.set('credits', this.get('credits') + 1);
     }
   },
   unhighlightAllLevelButtons() {
@@ -131,17 +111,16 @@ export default Component.extend({
   actions: {
     // call to spin the slot reels
     shuffle() {
-      // reset reel for start
-      RESULTS = [];
-      for (let i=1; i<NUMBER_OF_REELS+1; i++) {
+      for (let i=1; i<=NUMBER_OF_REELS; i++) {
 //
         get(this, `reel${i}`).shuffle(99999, this.onComplete);
       }
     },
     stop() {
-      for (let i=1; i<NUMBER_OF_REELS+1; i++) {
+      for (let i=1; i<=NUMBER_OF_REELS; i++) {
         get(this, `reel${i}`).shuffle(0, this.onComplete);
       }
+      this.checkWin();
     },
     selectLevelOne() {
       this.selectedLevel = 1;
