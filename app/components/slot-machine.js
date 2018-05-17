@@ -16,15 +16,10 @@ export default Component.extend({
   mCredits: 0,
   store: Ember.inject.service(),
 
-  // At this point jQuery onWindow load has completed
-  // Calling this makes sure that only 3 slot reel icons are showing
   didInsertElement: function() {
     for (let i=1; i<NUMBER_OF_REELS+1; i++) {
       this.setReel(`reel${i}`, i*36);
     }
-
-
-    //CREDITS = this.mCredits;
   },
   didReceiveAttrs: function () {
     CREDITS = this.mCredits;
@@ -34,7 +29,6 @@ export default Component.extend({
     this.set('mCredits', CREDITS);
 
     console.log(this.get('mCredits'));
-    //add to database
 
     var a = this.get('mCredits');
     var curr_email = this.user_email;
