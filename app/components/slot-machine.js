@@ -11,15 +11,50 @@ let CREDITS = 0;
 
 export default Component.extend({
   mCredits: 0,
+  store: Ember.inject.service(),
+
   // At this point jQuery onWindow load has completed
   // Calling this makes sure that only 3 slot reel icons are showing
   didInsertElement: function() {
     for (let i=1; i<NUMBER_OF_REELS+1; i++) {
       this.setReel(`reel${i}`, i*36);
     }
+
+
+    //CREDITS = this.mCredits;
   },
+  didReceiveAttrs: function () {
+    CREDITS = this.mCredits;
+  },
+
   didRender: function() {
     this.set('mCredits', CREDITS);
+
+    console.log(this.get('mCredits'));
+    //add to database
+    
+    var a = this.get('mCredits');
+    var curr_email = this.user_email;
+    var curr_credit= parseInt(a); //a is winnings
+    var self = this;
+      this.store.findAll('user').then(function(users) {
+        users.forEach(function(user) {
+          if(curr_email == user.email)
+            {
+              var fetch_credit = parseInt(user.credit);
+              console.log(fetch_credit);
+              var final_credit = curr_credit;
+              console.log(final_credit);
+              var credit = final_credit.toString();
+              self.store.findRecord('user',user.id).then(function(post){
+                post.set('credit',credit);
+                post.save();
+              });
+            console.log(user.email);
+            }
+
+        });
+      });
   },
   setReel(name, delay) {
     let reel = this.$(`.${name}`).slotMachine({
@@ -123,6 +158,8 @@ export default Component.extend({
         get(this, `reel${i}`).shuffle(0, this.onComplete);
       }
       console.log("outside " + CREDITS); // displays the creidts
+
+      console.log("SDSD" + this.mCredits);
     },
     selectLevelOne() {
       SELECTED_LEVEL = 1;
