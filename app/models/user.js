@@ -3,5 +3,5 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   user_id: DS.attr('string'),
   email: DS.attr('string'),
-  credit: DS.attr('string')
+  credit: DS.attr('number')
 });
