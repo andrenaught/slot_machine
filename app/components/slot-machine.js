@@ -11,8 +11,8 @@ let CREDITS = 0;
 
 export default Component.extend({
   levelOneCost: 10,
-  levelTwoCost: 25,
-  levelThreeCost: 50,
+  levelTwoCost: 20,
+  levelThreeCost: 35,
   mCredits: 0,
   store: Ember.inject.service(),
 
