@@ -10,6 +10,9 @@ let SELECTED_LEVEL = 3;
 let CREDITS = 0;
 
 export default Component.extend({
+  levelOneCost: 10,
+  levelTwoCost: 25,
+  levelThreeCost: 50,
   mCredits: 0,
   store: Ember.inject.service(),
 
@@ -168,13 +171,13 @@ export default Component.extend({
       }
       CREDITS = this.mCredits;
       if (SELECTED_LEVEL == 1) {
-        CREDITS -= 10;
+        CREDITS -= this.levelOneCost;
       }
       else if (SELECTED_LEVEL == 2) {
-        CREDITS -= 20;
+        CREDITS -= this.levelTwoCost;
       }
       else if (SELECTED_LEVEL == 3) {
-        CREDITS -= 30;
+        CREDITS -= this.levelThreeCost;
       }
       this.set('mCredits', CREDITS);
     },
